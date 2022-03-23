@@ -1,0 +1,23 @@
+{
+  "name": "vplorer",
+  "version": "1.0.0",
+  "description": "a Vue file explorer",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bezko/vplorer.git"
+  },
+  "author": "bezko",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/bezko/vplorer/issues"
+  },
+  "homepage": "https://github.com/bezko/vplorer#readme",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "vue": "^3.2.31"
+  }
+}
