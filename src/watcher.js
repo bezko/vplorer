@@ -30,6 +30,6 @@ module.exports =  function watcher(args)
     _.forEach(args, (dir) => {
         contents.push(getContent(dir))
     })
-    console.log( JSON.stringify(contents));
+    return contents;
 }
 

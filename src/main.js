@@ -21,7 +21,11 @@ _.forEach( args, (dir) =>{
     }
 })
 
-watcher(args)
+var contents =  watcher(args)
+
+server(contents);
+
+
 
 
 
