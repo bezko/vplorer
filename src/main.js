@@ -1,12 +1,32 @@
-const express = require('express')
-const app = express()
-const port = 5888
-app.use(express.static('public'))
-app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-    res.render('index');
+const _ = require("lodash");  
+const fs = require('fs');
+const args = process.argv.slice(2)
+const server =  require('./server.js')
+const watcher = require('./watcher.js')
+
+
+if (args.length == 0)
+{
+    console.log("Missing at least one directory argument")
+    process.exit()
+}
+
+_.forEach( args, (dir) =>{
+
+    if (!fs.existsSync(dir))
+    {
+        console.log("Directory not found: " + dir)
+        process.exit()
+    }
 })
 
-app.listen(port);
+watcher(args)
+
+
+
+
+
+
+
 
