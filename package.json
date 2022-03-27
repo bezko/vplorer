@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/bezko/vplorer#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
     "lodash": "^4.17.21",
     "vue": "^3.2.31"
   }
