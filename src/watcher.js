@@ -1,11 +1,6 @@
 const _ = require("lodash");  
 const fs = require('fs');
-
-
-
-
-
-module.exports =  function watcher(args)
+module.exports =  function watcher(args,reload)
 {
    function getContent(dir)
    {   
@@ -15,6 +10,7 @@ module.exports =  function watcher(args)
        _.forEach(files, (file)=>{
              var path = dir + '/' + file;
              if (fs.statSync(path).isDirectory()){
+                fs.watch(path,reload)
                 content.push({
                         name: file,
                         content: getContent(path)

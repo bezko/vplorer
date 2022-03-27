@@ -14,7 +14,7 @@ if (args.length == 0)
 
 function reload()
 {
-    var contents =  watcher(args)
+    var contents =  watcher(args,reload)
     server.data = contents;
     wss.clients.forEach(function each(client) {
         client.send("reload");
