@@ -1,17 +1,14 @@
 <template>
   <div class="directory-outline">
-      <h3> Directory path: {{ path }}</h3>
+      <h3> Directory path: {{ info.path }}</h3>
+      <Item :content="info.content"></Item>
   </div>
 </template>
 <script>
 export default {
   name: 'Directory',
-  data() {
-      return {
-        path: 'Default',
-        content: []
-  }}
-}
+  props: ['info']
+ }
 </script>
 <style scoped>
     .directory-outline

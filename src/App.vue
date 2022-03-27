@@ -1,9 +1,7 @@
-<template>
-   
-    <Directory v-for="dir in dirs">
-      
-    </Directory>
-
+<template>    
+        <div v-for="dir in dirs">
+            <Directory  :info="dir"> </Directory>
+        </div>
 </template>
 
 <script>
@@ -15,7 +13,7 @@ export default {
   data() {
 
     return {
-
+      ws: null,
       dirs: []
 
     }
@@ -29,13 +27,18 @@ export default {
  
 
   created() 
-  {
-      axios.get('/data')
-        .then((response) => {
+  {   
+      var reload = () => {
+            axios.get('/data').then((response) => {
             this.dirs = response.data;
         })
+      }
+     
+    this.ws = new WebSocket("ws://localhost:5889")
+    this.ws.onmessage = function(event) {
+      reload()
+    }
+    reload();
   }
-
 }
-
 </script>

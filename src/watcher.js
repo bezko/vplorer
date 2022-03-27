@@ -28,8 +28,15 @@ module.exports =  function watcher(args)
    
    var contents = []
     _.forEach(args, (dir) => {
-        contents.push(getContent(dir))
+
+        var obj = {
+            path: dir,
+            content:  getContent(dir)
+        }
+        contents.push(obj)
     })
+
+
     return contents;
 }
 
