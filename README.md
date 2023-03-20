@@ -2,7 +2,7 @@
 a Vue file explorer
 
 
-## Intructions
+## Instructions
 
 npm i 
 
